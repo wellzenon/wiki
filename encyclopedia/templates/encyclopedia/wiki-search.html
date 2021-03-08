@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Results for "{{ query }}"
+{% endblock %}
+
+{% block body %}
+    <div class="edit-form-heading">
+        <h1> Results for "{{ query }}" </h1>
+    </div>
+    <div class="contentpadding">
+        <ul>
+            {% for entry in entries %}
+                <li> <a href="/wiki/{{ entry }}/"> {{ entry }} </a> </li>
+            {% empty %}
+                <p> No matches for "{{ query }}". </p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

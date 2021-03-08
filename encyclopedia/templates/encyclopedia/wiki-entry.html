@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {% if title == None %}
+        Not found
+    {% else %}
+        {{ title }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if content == None %}
+        <div class="edit-form-heading">
+            <h1> {{ title }} not found </h1>
+        </div>
+        <div class="contentpadding">
+            <p> Search for {{ title }} found no matches. </p> 
+        </div>
+    {% else %}
+        <div class="edit-form-heading">
+            <h1> {{ title }} </h1>
+            <a href="edit/" class="edit-link" > Edit {{ title }} </a>
+        </div>
+        <div class="contentpadding">        
+            <p> {{ content|safe }} </p>   
+        </div>     
+    {% endif %}
+{% endblock %}

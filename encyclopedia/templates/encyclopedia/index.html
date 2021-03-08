@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <div class="edit-form-heading">
+        <h1>All Pages</h1>
+    </div>
+    <div class="contentpadding">
+        <ul>
+            {% for entry in entries %}
+                <li> <a href="wiki/{{ entry }}"> {{ entry }} </a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
